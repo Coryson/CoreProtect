@@ -135,34 +135,6 @@ public class CommandHandler implements CommandExecutor {
                 Chat.sendMessage(user,Color.GREY + "[" + Color.DARK_AQUA + Color.BOLD + "CP" + Color.GREY + "] " + Color.WHITE + Phrase.build(Phrase.MISSING_PARAMETERS, Color.WHITE, "/co <parameters>"));
             }
 
-            if (user.isOp() && versionAlert.get(user.getName()) == null) {
-                String latestVersion = NetworkHandler.latestVersion();
-                String latestEdgeVersion = NetworkHandler.latestEdgeVersion();
-                if (latestVersion != null || latestEdgeVersion != null) {
-                    versionAlert.put(user.getName(), true);
-                    class updateAlert implements Runnable {
-                        @Override
-                        public void run() {
-                            try {
-                                Thread.sleep(5000);
-                                Chat.sendMessage(user, Color.WHITE + "----- " + Color.DARK_AQUA + Phrase.build(Phrase.UPDATE_HEADER, "CoreProtect" + (VersionUtils.isCommunityEdition() ? " " + ConfigHandler.COMMUNITY_EDITION : "")) + Color.WHITE + " -----");
-                                if (latestVersion != null) {
-                                    Chat.sendMessage(user, Color.DARK_AQUA + Phrase.build(Phrase.UPDATE_NOTICE, Color.WHITE, "CoreProtect CE v" + latestVersion));
-                                    Chat.sendMessage(user, Color.DARK_AQUA + Phrase.build(Phrase.LINK_DOWNLOAD, Color.WHITE, "www.coreprotect.net/download/"));
-                                }
-                                else {
-                                    Chat.sendMessage(user, Color.DARK_AQUA + Phrase.build(Phrase.UPDATE_NOTICE, Color.WHITE, "CoreProtect v" + latestEdgeVersion));
-                                    Chat.sendMessage(user, Color.DARK_AQUA + Phrase.build(Phrase.LINK_DOWNLOAD, Color.WHITE, "www.coreprotect.net/latest/"));
-                                }
-                            }
-                            catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    }
-                    (new Thread(new updateAlert())).start();
-                }
-            }
 
             return true;
         }
