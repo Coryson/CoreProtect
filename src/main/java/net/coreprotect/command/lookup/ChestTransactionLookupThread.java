@@ -43,7 +43,7 @@ public class ChestTransactionLookupThread implements Runnable {
                 statement.close();
             }
             else {
-                Chat.sendMessage(player, Color.DARK_AQUA + "CoreProtect " + Color.WHITE + "- " + Phrase.build(Phrase.DATABASE_BUSY));
+                Chat.sendMessage(player,Color.GREY + "[" + Color.DARK_AQUA + Color.BOLD + "CP" + Color.GREY + "] " + Color.WHITE + Phrase.build(Phrase.DATABASE_BUSY));
             }
         }
         catch (Exception e) {

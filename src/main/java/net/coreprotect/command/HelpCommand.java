@@ -123,7 +123,7 @@ public class HelpCommand {
             }
         }
         else {
-            Chat.sendMessage(player, Color.DARK_AQUA + "CoreProtect " + Color.WHITE + "- " + Phrase.build(Phrase.NO_PERMISSION));
+            Chat.sendMessage(player,Color.GREY + "[" + Color.DARK_AQUA + Color.BOLD + "CP" + Color.GREY + "] " + Color.WHITE + Phrase.build(Phrase.NO_PERMISSION));
         }
     }
 }

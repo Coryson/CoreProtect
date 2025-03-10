@@ -11,7 +11,7 @@ import net.coreprotect.utility.Color;
 public class NetworkDebugCommand {
     protected static void runCommand(CommandSender player, boolean permission, String[] args) {
         if (!permission || !Config.getGlobal().NETWORK_DEBUG) {
-            Chat.sendMessage(player, Color.DARK_AQUA + "CoreProtect " + Color.WHITE + "- " + Phrase.build(Phrase.NO_PERMISSION));
+            Chat.sendMessage(player,Color.GREY + "[" + Color.DARK_AQUA + Color.BOLD + "CP" + Color.GREY + "] " + Color.WHITE + Phrase.build(Phrase.NO_PERMISSION));
             return;
         }
 

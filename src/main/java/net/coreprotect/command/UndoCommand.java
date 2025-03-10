@@ -43,7 +43,7 @@ public class UndoCommand {
                 }
             }
             else {
-                Chat.sendMessage(user, Color.DARK_AQUA + "CoreProtect " + Color.WHITE + "- " + Phrase.build(Phrase.NO_ROLLBACK, Selector.SECOND));
+                Chat.sendMessage(user,Color.GREY + "[" + Color.DARK_AQUA + Color.BOLD + "CP" + Color.GREY + "] " + Color.WHITE + Phrase.build(Phrase.NO_ROLLBACK, Selector.SECOND));
             }
         }
         catch (Exception e) {
